@@ -13,7 +13,7 @@ const FieriPizza = async () => {
 		<main>
 			<div className='foodHeader grid grid-cols-3'>
 				<div className='justify-self-start'>
-					<Link href='/breakfast'>Back</Link>
+					<Link href='/dinner'>Back</Link>
 				</div>
 				<div className='font-bold'>
 					{foods ? foods.title : 'Database Error'}
@@ -29,9 +29,11 @@ const FieriPizza = async () => {
 					width={700}
 					height={500}
 				/>
-				<p className='mt-2 text-white'>
-					{foods ? foods.description : 'Database Error'}
-				</p>
+				<div className='mt-3 max-w-2xl text-center'>
+					<p className='mt-2 text-white'>
+						{foods ? foods.description : 'Database Error'}
+					</p>
+				</div>
 			</div>
 		</main>
 	);
