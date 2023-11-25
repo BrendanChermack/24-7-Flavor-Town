@@ -75,6 +75,7 @@
     padding: 1rem;
     background-color: #BE0000;
   }
+  
   header
   {
     background-color: #fff;
@@ -88,11 +89,15 @@
     -webkit-text-stroke: 1px;
     -webkit-text-stroke-color: black;
   }
-  header div
+
+  .foodHeader
   {
-    display: flex;
-    justify-content: right;
-    align-items: center;
-    float: right;
+    color: #ffffff;
+    font-size: 2.25em;
+    text-align: center;
+    padding: 1em;
+    -webkit-text-stroke: 1px;
+    -webkit-text-stroke-color: black;
   }
+  
 }
