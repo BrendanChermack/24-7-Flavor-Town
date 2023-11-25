@@ -1,16 +1,38 @@
-import Link from 'next/link'
-import React from 'react'
+import Link from 'next/link';
+import { db } from '@/lib/db';
+import Image from 'next/image';
+import { HomeButton } from '../../_components/home';
 
-const Waffels = () => {
-  return (
-    <main>
-      <div className='foodHeader grid grid-cols-3'>
-        <div><Link href="/breakfast">Back</Link></div>
-        <div>Waffels</div>
-        <div><Link href="/">Home</Link></div>
-      </div>
-    </main>
-  )
-}
+const Waffels = async () => {
+	const foods = await db.food.findUnique({
+		where: {
+			id: '3',
+		},
+	});
+	return (
+		<main>
+			<div className='foodHeader grid grid-cols-3'>
+				<div className='justify-self-start'>
+					<Link href='/breakfast'>Back</Link>
+				</div>
+				<div className='font-bold'>
+					{foods ? foods.title : 'Database Error'}
+				</div>
+				<div className='justify-self-end'>
+					<HomeButton />
+				</div>
+			</div>
+			<div className='flex flex-col justify-center items-center'>
+				<Image
+					src={foods ? foods.img : 'Database Error'}
+					alt='waffles'
+					width={700}
+					height={500}
+				/>
+				<p className='mt-2 text-white'>{foods ? foods.description : 'Database Error'}</p>
+			</div>
+		</main>
+	);
+};
 
-export default Waffels
+export default Waffels;

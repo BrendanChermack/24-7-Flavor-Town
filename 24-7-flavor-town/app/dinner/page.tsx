@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
+import { HomeButton } from '../_components/home';
 
 const DinnerPage = () => {
   return (
@@ -9,8 +10,8 @@ const DinnerPage = () => {
           <div className="">
             <h1>Dinner</h1>
           </div>
-          <div className="text-right">
-            <Link href="/">Home</Link>
+          <div className="absolute">
+            <HomeButton />
           </div>
         </header>
         <div className='flex flex-col justify-center items-center w-full p-0'>
